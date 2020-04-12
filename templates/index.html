@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>AI Debate</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="debate">
+	<h1>AI DEBATE</h1>
+    <form action="{{ url_for('prepare')}}"method="post">
+    	<input type="text" name="topic" placeholder="Topic" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Prepare</button>
+    </form>
+    <form action="{{ url_for('argue')}}"method="post">
+    	<input type="text" name="argument" placeholder="Your Argument...." required="required" style="height: 50px;" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Argue</button>
+    </form>
+   <br>
+   <br>
+   <p align='center'>
+	{{ argument }}
+	</p>
+
+ </div>
+
+</body>
+</html>
